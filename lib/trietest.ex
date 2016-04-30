@@ -1,0 +1,2 @@
+defmodule Trietest do
+end
