@@ -47,7 +47,7 @@ defmodule TrietestTest do
     trie = words
     |> Enum.reduce(%Trietest{}, fn(w, t) -> Trietest.add_word(t, w) end)
 
-    trie |> Trietest.to_dot |> IO.puts
+    # trie |> Trietest.to_dot |> IO.puts
 
     words
     |> Enum.each(fn(w) ->
