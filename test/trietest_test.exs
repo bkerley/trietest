@@ -47,10 +47,20 @@ defmodule TrietestTest do
     trie = words
     |> Enum.reduce(%Trietest{}, fn(w, t) -> Trietest.add_word(t, w) end)
 
+    trie |> Trietest.to_dot |> IO.puts
+
     words
     |> Enum.each(fn(w) ->
       assert(Trietest.include_word(trie, w),
              "Expected to include #{w}")
     end)
   end
+
+  # test "graph" do
+  #   trie = %Trietest{}
+  #   |> Trietest.add_word('aa')
+  #   |> Trietest.add_word('ab')
+
+  #   trie |> Trietest.to_dot |> IO.puts
+  # end
 end
